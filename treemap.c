@@ -143,20 +143,14 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
     TreeNode *node = tree->current;
     void *key = node->pair->key;
-    if (node->right)
-    {
-        node = minimum(node->right);
-    }
+    if (node->right) node = minimum(node->right);
     else
     {
         node = node->parent;
         while (tree->lower_than(node->pair->key, key))
         {
             node = node->parent;
-            if (node == NULL)
-            {
-                return NULL;
-            }
+            if (node == NULL) return NULL;
         }
     }
     tree->current = node;
