@@ -142,7 +142,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
     TreeNode *node = tree->current;
-    void *key = tree->current->pair->key;
+    void *key = node->pair->key;
     if (node->right)
     {
         node = minimum(node->right);
@@ -150,7 +150,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     else
     {
         printf("no tiene right\n");
-        while (node->pair->key < key)
+        while (tree->lower_than(node->pair->key, key))
         {
             node = node->parent;
             if (node == NULL)
