@@ -117,11 +117,10 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
         if (tree->lower_than(key, node->pair->key))
         {
             if (node->left != NULL) node = node->left;
+            tree->current = node;
+            continue;
         }
-        else
-        {
-            if (node->right != NULL) node = node->right;
-        }
+        if (node->right != NULL) node = node->right;
         tree->current = node;
     }
     return node->pair;
