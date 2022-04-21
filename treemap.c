@@ -149,6 +149,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     else
     {
+        printf("no tiene right\n");
         while (node->pair->key < key)
         {
             node = node->parent;
