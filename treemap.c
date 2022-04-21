@@ -152,6 +152,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         printf("no tiene right\n");
         while (tree->lower_than(node->pair->key, key))
         {
+            printf("loop\n");
             node = node->parent;
             if (node == NULL)
             {
