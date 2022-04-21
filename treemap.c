@@ -153,7 +153,11 @@ Pair * nextTreeMap(TreeMap * tree) {
         while (node->pair->key < key)
         {
             node = node->parent;
-            if (node == NULL) return NULL;
+            if (node == NULL)
+            {
+                printf("return null\n");
+                return NULL;
+            }
         }
     }
     tree->current = node;
