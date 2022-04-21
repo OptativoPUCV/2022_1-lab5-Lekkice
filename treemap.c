@@ -84,6 +84,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         node->pair->key = min->pair->key;
         node->pair->value = min->pair->value;
         removeNode(tree, min);
+        return;
     }
 
     TreeNode *aux;
