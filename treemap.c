@@ -50,7 +50,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     if (searchTreeMap(tree, key)) return; // ya existe, cambia el current
 
     TreeNode *node = createTreeNode(key, value);
-    node->parent = node;
+    node->parent = tree->current;
     if (tree->lower_than(key, tree->current->pair->key))
     {
         tree->current->left = node;
